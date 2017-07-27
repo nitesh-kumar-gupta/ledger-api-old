@@ -30,7 +30,7 @@
     "jsonfile": "^3.0.0",
     "jsonwebtoken": "^7.4.1",
     "lodash": "^4.17.4",
-    "mongoose": "^4.10.5",
+    "mongoose": "^4.11.4",
     "morgan": "^1.8.2",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
