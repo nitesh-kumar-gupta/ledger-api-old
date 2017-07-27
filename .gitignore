@@ -6,3 +6,4 @@ errorLogs/
 requestsLogs/
 dist/
 package-lock.json
+.env
