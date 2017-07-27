@@ -1,0 +1,18 @@
+[
+    {
+        "firstname": "First",
+        "middlename": "User",
+        "lastname": "Name",
+        "email": "first@user.name",
+        "password": "user1stname",
+        "type": "ADMIN"
+    },
+    {
+        "firstname": "Second",
+        "middlename": "User",
+        "lastname": "Name",
+        "email": "second@user.name",
+        "password": "user2ndname",
+        "type": "ADMIN"
+    }
+]
