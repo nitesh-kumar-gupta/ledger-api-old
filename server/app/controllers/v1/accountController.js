@@ -5,7 +5,7 @@ import Errors from './../../../config/constants/errors';
 import Response from './../../../config/responses/response';
 
 const accountController = {
-    getAccountSummary: (req, res) => {
+    getAccountSummary: async (req, res) => {
         let account = await accountHelper.getUser(req.params.id ? req.params.id : req.user.id);
         let data = {
             status: false,
