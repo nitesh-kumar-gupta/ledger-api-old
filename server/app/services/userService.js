@@ -48,7 +48,6 @@ class userService {
         return null;
     }
     async logout() {
-        console.log('888888888888888', this.user);
         if (this.user.id.match(/^[0-9a-fA-F]{24}$/)) {
             let user = await User.findById(this.user.id);
             user.lastlogin = new Date().toISOString();
