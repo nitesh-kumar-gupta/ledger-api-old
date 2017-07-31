@@ -14,6 +14,9 @@ class accountService {
             let balance = account.credit - account.debit;
             account = await account.save();
             let customer = await UserHelper.getUser(this.account.customer);
+            console.log('***********************');
+            console.log(customer, this.account);
+            console.log('***********************');
             customer.balance = customer.balance + balance;
             customer.save();
             return {
