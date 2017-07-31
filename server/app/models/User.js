@@ -35,6 +35,40 @@ const userSchema = new Schema(
             minlength: [8, 'Last Name must be of 8 or more characters']
         },
         phone: [],
+        city: {
+            type: String,
+            trim: true,
+            default: null,
+            minlength: [3, 'City name must be of 3 or more characters']
+        },
+        state: {
+            type: String,
+            required: true,
+            trim: true,
+            default: null,
+            minlength: [3, 'State name must be of 3 or more characters']
+        },
+        country: {
+            type: String,
+            required: true,
+            default: 'India',
+            trim: true,
+            minlength: [3, 'Country name must be of 3 or more characters']
+        },
+        pincode: {
+            type: Number,
+            required: true,
+            default: null,
+            minlength: [6, 'Pin code must be of 6 digits']
+        },
+        landmark: {
+            type: String,
+            default: null
+        },
+        extra: {
+            type: String,
+            default: null
+        },
         lastlogin: {
             type: Date,
             default: Date.now
