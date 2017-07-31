@@ -15,7 +15,6 @@ const accountController = {
         Response.response(res, data);
     },
     addAccount: async (req, res) => {
-        req.body.customer = req.params.id;
         const _accountService = new accountService(req.body);
         const account = await _accountService.addAccount();
         Response.response(res, account);
