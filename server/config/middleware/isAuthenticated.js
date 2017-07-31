@@ -7,9 +7,6 @@ var ExtractJwt = require('passport-jwt').ExtractJwt;
 
 module.exports = (req, res, next) => {
     passport.authenticate('jwt', function (error, user, info) {
-        console.log('******************************');
-        console.log(info.name);
-        console.log('******************************');
         if (error)
             Response.response(res, { status: false, error: Errors.E_INTERNAL_SERVER_ERROR });
         else if (info.name === 'TokenExpiredError')
