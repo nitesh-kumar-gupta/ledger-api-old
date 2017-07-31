@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import HashService from './../services/hashService';
-
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
@@ -49,6 +48,10 @@ const userSchema = new Schema(
             type: String,
             enum: ['SUSER', 'ADMIN', 'USER'],
             default: 'USER'
+        },
+        balance: {
+            type: Number,
+            default: 0
         }
     },
     {

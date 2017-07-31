@@ -1,23 +1,29 @@
-// import accountService from './../../services/accountService';
+import accountService from './../../services/accountService';
 import accountHelper from './../../helpers/accountHelper';
 import Success from './../../../config/constants/success';
 import Errors from './../../../config/constants/errors';
 import Response from './../../../config/responses/response';
 
 const accountController = {
-    getAccountSummary: async (req, res) => {
-        let account = await accountHelper.getUser(req.params.id ? req.params.id : req.user.id);
+    getAccount: async (req, res) => {
+        let account = await accountHelper.getAccount(req.params.id);
         let data = {
-            status: false,
-            error: Errors.E_USER_NOT_FOUND
+            status: true,
+            success: Success.S_OK,
+            data: account
         };
-        if (user)
-            data = {
-                status: true,
-                success: Success.S_OK,
-                data: user
-            };
         Response.response(res, data);
+    },
+    addAccount: async (req, res) => {
+        req.body.customer = req.params.id;
+        const _accountService = new accountService(req.body);
+        const account = await _accountService.addAccount();
+        Response.response(res, account);
+    },
+    updateAccount: async (req, res) => {
+        const _accountService = new accountService();
+        const account = await _accountService.updateAccount(req.params.id, req.body);
+        Response.response(res, account);
     }
 };
 export default accountController;

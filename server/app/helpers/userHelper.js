@@ -1,13 +1,13 @@
 import User from './../models/User';
 import Errors from './../../config/constants/errors';
 
-class UserHelper {    
+class UserHelper {
     static checkUserExistance(email) {
         if (!this.validateEmail(email))
             throw Errors.E_INVALID_EMAIL;
         var user = User.findOne({ email: email });
-        return user.exec((err, usr)=>{
-            if(err)
+        return user.exec((err, usr) => {
+            if (err)
                 throw err;
             return usr;
         });
@@ -18,10 +18,8 @@ class UserHelper {
         return emailRegex.test(email);
     }
 
-    static getUser(id){
-        if (id.match(/^[0-9a-fA-F]{24}$/))
-            return User.findById(id);
-        return null;
+    static getUser(id) {
+        return User.findById(id);
     }
 }
 export default UserHelper;

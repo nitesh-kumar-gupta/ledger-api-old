@@ -1,10 +1,14 @@
 import mongoose from 'mongoose';
-
+import User from './User';
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 const accountSchema = new Schema(
     {
+        customer: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
+        },
         credit: {
             type: Number,
             required: true,
@@ -46,7 +50,6 @@ accountSchema.set('toJSON', {
         return ret;
     }
 });
-
 
 const Account = mongoose.model('Account', accountSchema);
 export default Account;

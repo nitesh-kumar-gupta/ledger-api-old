@@ -1,7 +1,10 @@
 import User from './../models/User';
+import Account from './../models/Account';
 import Errors from './../../config/constants/errors';
 
-class UserHelper {
-
+class AccountsHelper {
+    static async getAccount(id) {
+        return await Account.find({ customer: id });
+    }
 }
-export default UserHelper;
+export default AccountsHelper;

@@ -6,7 +6,7 @@ import Response from './../../../config/responses/response';
 
 const adminController = {
     getCustomer: async (req, res) => {
-        let user = await adminHelper.getCustomer(req.params.id ? req.params.id : req.user.id);
+        let user = await adminHelper.getCustomer(req.params.id);
         let data = {
             status: false,
             error: Errors.E_CUSTOMER_NOT_FOUND

@@ -9,8 +9,8 @@ routes.post('/login', userController.login);
 routes.post('/signup', userController.signup);
 routes.put('/logout', IsAuthenticated, userController.logout);
 routes.get('/getUser/:id?', IsAuthenticated, userController.getUser);
-routes.put('/updateUser/:id?', IsAuthenticated, IsAdmin, userController.updateUser);
+routes.put('/updateUser/:id?', IsAuthenticated, userController.updateUser);
 
-routes.get('/user/account/summary/:id', IsAuthenticated, accountController.getAccountSummary)
+// routes.get('/user/account/summary/:id', IsAuthenticated, accountController.getAccountSummary)
 
 export default routes;
