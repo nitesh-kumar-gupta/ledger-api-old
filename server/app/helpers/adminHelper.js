@@ -5,7 +5,7 @@ class AdminHelper {
     static getCustomer(type) {
         var user = null;
         if (type === 'All')
-            user = User.find({ type: { $ne: 'ADMIN' } });
+            user = User.find({ type: { $ne: 'ADMIN' }, active: true });
         else
             user = User.findOne({ _id: type, type: { $ne: 'ADMIN' } });
         return user.exec((err, usr) => {
