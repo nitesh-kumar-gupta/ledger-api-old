@@ -11,6 +11,6 @@ routes.put('/customer/update/:id', IsAuthenticated, IsAdmin, adminController.upd
 routes.delete('/customer/delete/:id', IsAuthenticated, IsAdmin, adminController.deleteCustomer);
 
 routes.get('/customer/:id/account', IsAuthenticated, IsAdmin, accountController.getAccount);
-routes.post('/account/add', IsAuthenticated, IsAdmin, accountController.addAccount);
+routes.post('/account/:id/add', IsAuthenticated, IsAdmin, accountController.addAccount);
 routes.put('/customer/:id/account', IsAuthenticated, IsAdmin, accountController.updateAccount);
 export default routes;

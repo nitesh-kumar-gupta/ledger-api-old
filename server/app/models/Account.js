@@ -7,7 +7,8 @@ const accountSchema = new Schema(
     {
         customer: {
             type: mongoose.Schema.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            required: true
         },
         credit: {
             type: Number,
