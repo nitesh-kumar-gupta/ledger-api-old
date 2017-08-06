@@ -43,21 +43,18 @@ const userSchema = new Schema(
         },
         state: {
             type: String,
-            required: true,
             trim: true,
             default: null,
             minlength: [3, 'State name must be of 3 or more characters']
         },
         country: {
             type: String,
-            required: true,
             default: 'India',
             trim: true,
             minlength: [3, 'Country name must be of 3 or more characters']
         },
         pincode: {
             type: Number,
-            required: true,
             default: null,
             minlength: [6, 'Pin code must be of 6 digits']
         },
