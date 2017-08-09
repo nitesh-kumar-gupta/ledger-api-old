@@ -6,6 +6,7 @@ import Response from './../../../config/responses/response';
 
 const adminController = {
     getCustomer: async (req, res) => {
+        console.log('req.params.idreq.params.id', req.params.id);
         let user = await adminHelper.getCustomer(req.params.id);
         let data = {
             status: false,
